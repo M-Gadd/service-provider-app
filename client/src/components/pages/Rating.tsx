@@ -1,31 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "react-rater/lib/react-rater.css";
-// import api from "../../api";
-import {
-  CustomInput,
-  Input,
-  Container,
-  Row,
-  Col,
-  FormText,
-  Label,
-  Card,
-  Button,
-} from "reactstrap";
-import { useForm } from "react-hook-form";
+import { Container, Row, Col, Card, Button } from "reactstrap";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
 
 export interface RatingProps {
   navigation: any;
   formData: any;
-  setForm: any;
 }
 
 const Rating: React.SFC<RatingProps> = ({ formData, navigation }) => {
   const { skills } = formData;
 
-  const { previous, next } = navigation;
+  const { next } = navigation;
 
   const [skillsrating, setSkillstRating] = useState(skills);
 
@@ -55,7 +42,7 @@ const Rating: React.SFC<RatingProps> = ({ formData, navigation }) => {
             </Row>
             <Row className="mb-3">
               {skills &&
-                skills.map((skill: any, i: any) => (
+                skills.map((skill: any) => (
                   <Col className="text-center p-3 m-1" xs={12}>
                     <Card className="p-3 m-1 text-center">
                       <h5>{skill.skill}</h5>
@@ -63,9 +50,7 @@ const Rating: React.SFC<RatingProps> = ({ formData, navigation }) => {
                         <Rater
                           total={10}
                           rating={skill.rating}
-                          // interactive={}
                           onRate={(e) => handleRating(skill.skill, e)}
-                          //  onRating={}
                         />
                       </h4>
                     </Card>
@@ -74,9 +59,6 @@ const Rating: React.SFC<RatingProps> = ({ formData, navigation }) => {
             </Row>
 
             <span className="text-center d-flex justify-content-center mt-3">
-              {/* <Button color="light" className=" m-2" onClick={previous}>
-                Previous
-              </Button> */}
               <Button color="light" className=" m-2" onClick={next}>
                 Next
               </Button>

@@ -6,14 +6,9 @@ import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 export interface ClientResponseProps {
   request: any;
   handleChoice: any;
-  choices: any;
 }
 
-const ClientResponse: React.SFC<ClientResponseProps> = ({
-  request,
-  handleChoice,
-  choices,
-}) => {
+const ClientResponse: React.SFC<ClientResponseProps> = ({ request, handleChoice }) => {
   const [accepted, setAccepted] = useState(false);
   const [rejected, setRejected] = useState(false);
 

@@ -5,7 +5,6 @@ import "react-rater/lib/react-rater.css";
 export interface ProfileProps {
   navigation: any;
   formData: any;
-  setForm: any;
 }
 
 const Skills: React.SFC<ProfileProps> = ({ formData, navigation }) => {
@@ -24,7 +23,7 @@ const Skills: React.SFC<ProfileProps> = ({ formData, navigation }) => {
 
   const [chosenSkills, setChosenSkills] = useState(Array);
 
-  const { previous, next } = navigation;
+  const { next } = navigation;
 
   const toggleSwitch = (skill: any) => {
     if (chosenSkills.includes(skill)) {
@@ -70,9 +69,6 @@ const Skills: React.SFC<ProfileProps> = ({ formData, navigation }) => {
                 ))}
             </Row>
             <span className="text-center d-flex justify-content-center mt-3">
-              {/* <Button color="light" className=" m-2" onClick={previous}>
-                Previous
-              </Button> */}
               <Button color="light" className=" m-2" onClick={next}>
                 Next
               </Button>

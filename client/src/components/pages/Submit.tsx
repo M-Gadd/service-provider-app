@@ -38,12 +38,10 @@ const Submit: React.SFC<SubmitProps> = ({ formData, navigation }) => {
 
   const handleChoices = (request: any, status: string) => {
     let response = true;
-    console.log(status);
 
     if (status === "rejected") {
       if (choices.length) {
         choices.forEach((one: any) => {
-          console.log(one);
           if (one.client === request.client) {
             setChoices(
               choices.filter((stateChoice: any) => {
@@ -102,11 +100,7 @@ const Submit: React.SFC<SubmitProps> = ({ formData, navigation }) => {
                     </span>
                   </Col>
                 </Row>
-                <ClientResponse
-                  handleChoice={handleChoices}
-                  request={request}
-                  choices={choices}
-                />
+                <ClientResponse handleChoice={handleChoices} request={request} />
               </Card>
             </Col>
           ))}
