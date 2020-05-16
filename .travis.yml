@@ -1,12 +1,9 @@
 sudo: require
-language: generic
-env:
-  global:
-    - DOCKER_COMPOSE_VERSION=1.23.2
+language: node_js
 services:
   - docker
 before-install:
-  - chmod +x ./continous_deployment.sh
+  - chmod +x ./deploy.sh
 
 script:
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then ./deploy.sh; fi'
