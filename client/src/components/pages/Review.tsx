@@ -26,7 +26,6 @@ const Review: React.SFC<Review> = ({ formData, navigation }) => {
             <h6>Last name: {`${lastName}`}</h6>
             <h6>Age: {`${age}`}</h6>
             <h6>Email: {`${email}`}</h6>
-            <h6>Image: {`${image}`}</h6>
           </Card>
 
           <Card className="text-center p-3 m-3">
