@@ -8,7 +8,7 @@ A multi-stage signup form that gets requests from the backend based on the info 
 - [x] React Hooks
 - [x] Node.js API
 - [x] Heroku Deployment
-- [x] CD/CI Travis integration
+- [x] CI/CD Travis integration
 
 ## Getting started:
 
